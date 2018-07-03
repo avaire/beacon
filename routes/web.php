@@ -16,8 +16,8 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix' => 'v1'], function () use ($router) {
-    $router->get('test', [
-        'middleware' => 'throttle:30',
-        'uses' => 'ExampleController@index'
+    $router->post('bot/{id}', [
+        'middleware' => 'throttle:1',
+        'uses' => 'BotController@store'
     ]);
 });
