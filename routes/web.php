@@ -20,4 +20,9 @@ $router->group(['prefix' => 'v1'], function () use ($router) {
         'middleware' => 'throttle:1',
         'uses' => 'BotController@store'
     ]);
+
+    $router->get('bot/{id}', [
+        'middleware' => 'throttle:1',
+        'uses' => 'BotController@show'
+    ]);
 });

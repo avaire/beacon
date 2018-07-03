@@ -8,6 +8,25 @@ use Illuminate\Http\Request;
 class BotController extends Controller
 {
     /**
+     * Shows the bot entry with the given ID if it exists.
+     * @param  string $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $bot = Bot::where('id', $id)->first();
+        
+        if ($bot == null) {
+            return $this->sendError(404, 'Found no bot resource with the given ID.');
+        }
+
+        return response()->json([
+            'status' => 200,
+            'data' => $bot->toArray()
+        ]);
+    }
+
+    /**
      * Valids the bot request, if everything is A-OK, the data is stored in the database.
      * 
      * @param  \Illuminate\Http\Request $request

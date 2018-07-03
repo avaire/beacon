@@ -21,6 +21,7 @@ class Bot extends Model
      * @var array
      */
     protected $casts = [
+        'id' => 'string',
         'shards' => 'json'
     ];
 }
