@@ -15,7 +15,7 @@ class BotController extends Controller
     public function show($id)
     {
         $bot = Bot::where('id', $id)->first();
-        
+
         if ($bot == null) {
             return $this->sendError(404, 'Found no bot resource with the given ID.');
         }

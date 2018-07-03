@@ -12,17 +12,17 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return view('home');
 });
 
 $router->group(['prefix' => 'v1'], function () use ($router) {
     $router->post('bot/{id}', [
-        'middleware' => 'throttle:1',
+        'middleware' => 'throttle:30',
         'uses' => 'BotController@store'
     ]);
 
     $router->get('bot/{id}', [
-        'middleware' => 'throttle:1',
+        'middleware' => 'throttle:5',
         'uses' => 'BotController@show'
     ]);
 });
