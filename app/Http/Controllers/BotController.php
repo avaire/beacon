@@ -68,7 +68,7 @@ class BotController extends Controller
             Bot::create($data) : $bot->update($data);
 
         return response()->json([
-            'stats' => 200,
+            'status' => 200,
             'message' => 'The payload has been saved successfully.'
         ], 200);
     }
