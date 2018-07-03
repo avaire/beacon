@@ -14,3 +14,10 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'v1'], function () use ($router) {
+    $router->get('test', [
+        'middleware' => 'throttle:30',
+        'uses' => 'ExampleController@index'
+    ]);
+});
