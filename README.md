@@ -1,6 +1,6 @@
 ## About Beacon
 
-Beacon is a small web API built on [Lumen](https://lumen.laravel.com/) that helps keep track self-hosting instances of [AvaIre](https://github.com/avaire/avaire).
+Beacon is a small web API built on [Lumen](https://lumen.laravel.com/) that helps keep track of self-hosted instances of [AvaIre](https://github.com/avaire/avaire).
 
 Beacon tracks the following things:
 
@@ -11,8 +11,6 @@ Beacon tracks the following things:
  * Shards along with how many users, channels, and servers it is on
 
 > Beacon will **not** store any user, channel, or guild IDs the bot is on.
-
-More coming soon...
 
 ## License
 
