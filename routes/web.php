@@ -25,4 +25,9 @@ $router->group(['prefix' => 'v1'], function () use ($router) {
         'middleware' => 'throttle:5',
         'uses' => 'BotController@show'
     ]);
+
+    $router->get('stats', [
+        'middleware' => 'throttle:1',
+        'uses' => 'StatsController@index'
+    ]);
 });

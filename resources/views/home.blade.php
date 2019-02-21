@@ -58,6 +58,29 @@
                 <div class="col-md-8"> 
                     <div class="card"> 
                         <div class="card-header">
+                            Get Stats
+                            <span class="btn btn-sm btn-primary resource float-right">Costs <strong>1</strong> Resource</span>
+                        </div> 
+         
+                        <div class="card-body"> 
+                            <p>Gets stats collected by Beacon, like the total amount of self-hosted bots, and the total combined servers, channels, and users between all the bots.</p>
+
+                            <p><span class="btn btn-sm btn-success">GET</span> <code>/v1/stats</code></p>
+                            <p><strong>Example:</strong></p>
+                            <p>
+                                <code>{{ env('APP_SITE') }}v1/stats</code>
+                            </p>
+                        </div> 
+                    </div> 
+                </div> 
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row justify-content-center"> 
+                <div class="col-md-8"> 
+                    <div class="card"> 
+                        <div class="card-header">
                             Get Bot
                             <span class="btn btn-sm btn-primary resource float-right">Costs <strong>5</strong> Resources</span>
                         </div> 
