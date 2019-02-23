@@ -43,25 +43,23 @@ class GenerateStatsCommand extends Command
     public function generateStats()
     {
         $bots = 0;
-        $total = [
-            'users' => 0,
-            'channels' => 0,
-            'guilds' => 0,
-        ];
+        $users = 0;
+        $channels = 0;
+        $guilds = 0;
 
         foreach (Bot::all() as $bot) {
             $bots++;
 
             foreach ($bot->shards as $shard) {
-                $total['users'] += $shard['users'];
-                $total['channels'] += $shard['channels'];
-                $total['guilds'] += $shard['guilds'];
+                $users += $shard['users'];
+                $channels += $shard['channels'];
+                $guilds += $shard['guilds'];
             }
         }
 
         $active_bots = Bot::where('updated_at', '>=', Carbon::now()->subDays(7))->count();
 
-        return array_merge(compact('bots', 'active_bots', 'total'), [
+        return array_merge(compact('bots', 'active_bots', 'guilds', 'channels', 'users'), [
             'updatedAt' => Carbon::now()->toRfc850String()
         ]);
     }
