@@ -59,7 +59,9 @@ class GenerateStatsCommand extends Command
             }
         }
 
-        return array_merge(compact('bots', 'total'), [
+        $active_bots = Bot::where('updated_at', '>=', Carbon::now()->subDays(7))->count();
+
+        return array_merge(compact('bots', 'active_bots', 'total'), [
             'updatedAt' => Carbon::now()->toRfc850String()
         ]);
     }
